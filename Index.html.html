@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>263913 Alberta Inc. | Yardi Reporting & Automation Consultant</title>
+    <style>
+        /* --- Basic Setup & Typography --- */
+        :root {
+            --primary-color: #003366; /* Deep Corporate Blue */
+            --secondary-color: #007BFF; /* Bright Blue for links/buttons */
+            --light-gray: #f4f4f9;
+            --dark-gray: #333333;
+            --text-color: #555555;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        h1 { font-size: 2.8em; margin-bottom: 0.2em; }
+        h2 { font-size: 2.2em; text-align: center; margin-bottom: 1em; }
+        h3 { font-size: 1.4em; }
+        p { font-size: 1.1em; }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 4rem 0;
+        }
+        section {
+            border-bottom: 1px solid #ddd;
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* --- Header & Navigation --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin-left: 25px;
+        }
+        .navbar ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* --- Hero Section --- */
+        #hero {
+            background-color: var(--light-gray);
+            text-align: center;
+            padding: 12rem 0 8rem 0;
+            margin-top: 60px; /* Offset for fixed navbar */
+        }
+        #hero p {
+            max-width: 650px;
+            margin: 1em auto;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 1em;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background: var(--primary-color);
+        }
+
+        /* --- Services Section --- */
+        #services { background: #fff; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .service-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .service-card .icon {
+            font-size: 3em;
+            color: var(--secondary-color);
+        }
+
+        /* --- Case Studies Section --- */
+        #cases { background: var(--light-gray); }
+        .case-study {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        .case-study:last-of-type { margin-bottom: 0; }
+        .case-result {
+            text-align: center;
+            border-right: 3px solid var(--secondary-color);
+            padding-right: 2rem;
+        }
+        .case-result .number {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+            line-height: 1.1;
+        }
+        .case-result .desc {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        .case-details h3 { margin-top: 0; }
+
+        /* --- About Section --- */
+        #about {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        #about img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+        footer a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* --- Responsive Design --- */
+        @media(max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.8em; }
+            .navbar { flex-direction: column; }
+            .navbar ul { margin-top: 1rem; }
+            #hero { padding: 8rem 0 6rem 0; }
+            .case-study { grid-template-columns: 1fr; }
+            .case-result { border-right: none; border-bottom: 3px solid var(--secondary-color); padding-right: 0; padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+            #about { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">263913 Alberta Inc.</a>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#cases">Case Studies</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Stop Wasting Hours on Manual Yardi Reports</h1>
+                <p>I build custom reports and automate financial processes in Yardi Voyager for growing real estate firms in the US and Canada. Get the data you need, save valuable time, and improve your financial accuracy.</p>
+                <a href="#contact" class="cta-button">Schedule a Free Consultation</a>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>Your On-Demand Yardi Specialist</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon">📊</div>
+                        <h3>Custom Yardi Reporting</h3>
+                        <p>Unlock the financial insights hidden in your Yardi data. We design and deploy advanced custom reports using ySQL and T-SQL that go beyond standard reports to support complex financial analysis. Our goal is to provide a single, filterable view of your data, making it easier to analyze trends, forecast, and make informed decisions, which showcases a professional's deep expertise in their field.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">⚙️</div>
+                        <h3>Financial Process Automation</h3>
+                        <p>Reclaim dozens of hours per month with intelligent automation. We use T-SQL scripts and VBA to automate high-frequency tasks and data extraction, eliminating manual errors and accelerating your financial close. This service provides a strategic benefit by freeing up your team for high-value work and is a crucial signal of your trustworthiness and efficiency.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">💾</div>
+                        <h3>Database & Technical Support</h3>
+                        <p>Connect Yardi to your entire business ecosystem. We manage complex ETL processes and data migration, ensuring seamless data flow between Yardi and other enterprise systems like Power BI. This integration provides a unified, single source of truth for all your data, enhancing your ability to make data-driven decisions and positioning you as a trusted advisor.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">↔️</div>
+                        <h3>Data Solutions & Integration</h3>
+                        <p>Manage ETL processes and data migration to ensure seamless data flow between Yardi and other systems, enhancing your reporting capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cases">
+            <div class="container">
+                <h2>Proven Results for Real Estate Firms</h2>
+                <div class="case-study">
+                    <div class="case-result">
+                        <div class="number">15 hrs</div>
+                        <div class="desc">Saved in Monthly Reporting Time</div>
+                    </div>
+                    <div class="case-details">
+                        <h3>Project Cost Report Automation</h3>
+                        <p><strong>Problem:</strong> A land development company's finance team spent excessive time manually structuring project financial data for budgeting and forecasting.</p>
+                        <p><strong>Solution:</strong> I developed a specialized Project Cost Report that automated hierarchical data structuring and subtotaling. This solution streamlined the entire budgeting and forecasting workflow.</p>
+                    </div>
+                </div>
+                <div class="case-study">
+                    <div class="case-result">
+                        <div class="number">20%</div>
+                        <div class="desc">Faster Financial Reconciliation</div>
+                    </div>
+                    <div class="case-details">
+                        <h3>Job Cost Reconciliation Report</h3>
+                        <p><strong>Problem:</strong> Preparing for financial audits was slow and difficult due to siloed invoice and contract data.</p>
+                        <p><strong>Solution:</strong> I engineered a T-SQL-driven report to aggregate all job cost data into a single, filterable view, providing granular details on demand for auditors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container" style="display: flex; align-items: center; gap: 3rem;">
+                <img src="https://i.ibb.co/4Z5jF8c/professional-headshot-placeholder.jpg" alt="Professional headshot for 263913 Alberta Inc.">
+                <div>
+                    <h2>A Unique Blend of Finance and Technology</h2>
+                    <p>
+                        My unique background in both computer science and accounting allows me to do more than just write code; I understand the financial challenges that keep you up at night. I bridge the gap between technical possibilities and business realities, translating complex needs into efficient, scalable database solutions that drive operational efficiency. This is a core part of building trust with a B2B audience by showing I understand their pain points. 
+</p>
+My experience as a Systems Developer and Data Engineer focused on Yardi's Microsoft SQL Server backend means I've already solved the problems you're facing.
+                    </p>
+                    <p>
+            
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contact">
+        <div class="container" style="padding: 2rem 0;">
+            <h2>Let's Improve Your Yardi Workflow</h2>
+            <p>Ready to automate your reporting and unlock the full potential of your data?</p>
+            <a href="mailto:263913alberta@gmail.com" class="cta-button">Email Me: 263913alberta@gmail.com</a>
+            <p style="margin-top: 2rem;">© 2025 263913 Alberta Inc. | Yardi Consulting | Connect with me on <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
